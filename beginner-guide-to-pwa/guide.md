@@ -386,3 +386,53 @@ PWA应用更加让人兴奋的一个特点是可以离线运行。使用service
 Push API在Chrome，Opera和三星手机的浏览器上均已被支持，Firefox和微软Edge浏览器也会陆续支持。不幸的是，没有迹象表明Safari会支持该API的功能。
 
 #### 性能
+
+使用service worker的最明显的好处就是，我们几乎只做了很小的改动就能大大提升应用的性能。站点没有使用service worker，页面加载的时候需要获取超过200KB的资源文件，现在减少到了13KB。在普通的3G网络情况下，页面的加载时间从3.5秒减少到了500毫秒。
+
+这些性能的提升是非常明显的，因为我们的应用本身很小，功能很简单。然而，通过正确使用缓存，可以显著地提升应用的性能和用户体验，特别是对于网络状况不太好的用户。
+
+#### Lighthouse
+
+Google的Chrome团队推出了一个工具来测试PWA应用。[Lighthose](https://github.com/GoogleChrome/lighthouse)可以在Node.js环境运行，或者直接食用Chrome提供的插件，你可以在Github上找到该开源项目。
+
+如果想要使用Lighthoust进行测试，你的站点必须是线上可访问的，意味着你无法在本地通过localhost进行测试。
+
+开始测试之前，你需要先下载相应的npm模块：
+
+    npm install -g GoogleChrome/lighthouse
+
+安装好之后，运行Chrome(版本号至少为52)：
+
+    npm explore -g lighthouse -- npm run chrome
+    lighthouse https://incredibleweb.github.io/pwa-tutorial/
+
+L运行的结果会展示在命令行，Lighthouse会根据PWA的功能点以及你的实现情况进行打分，比如你是否添加了manifest.json文件或者你的页面是否可以离线访问。
+
+### 总结
+
+改文章仅仅是对于progressive web app的入门指导。不管是使用Push API支持消息推送，使用户更好地和应用互动，或者使用IndexedDB和后台同步来提升应用的离线体验，我们还可以做更多的工作来打造用户喜欢的真正和原生app体验一致的应用。
+
+#### 浏览器支持情况
+
+Progressive web app的发展才刚刚起步，浏览器的支持情况也不是很乐观，特别是在Safari和Edge中。然后，微软已经公开表示会在将来完全支持Progressive web app。
+
+
+-   `Service worker和Cache API`
+
+Chrome，Firefox，Opera和三星手机浏览器均已支持。微软Edge也会陆续支持，目前还在开发中。Safari还在考虑是否要支持。
+
+-   `Add to home screen`
+
+Chrome，Firefox，Opera和三星手机浏览器均已支持。微软暗示PWA应用将会出现在应用商店中。Safari目前没有计划支持。
+
+-   `Push API`
+
+Chrome，Firefox，Opera和三星手机浏览器均已支持绝大多数API。微软Edge也会陆续支持。Safari目前没有计划支持。
+
+如果有更多的开发者使用progressive web app提供的各种新特性，这些特性相对来说比较容易实现而且能带来显著的效果，就会有更多的用户会选择使用支持的浏览器去访问这些web应用，希望这样会让其他浏览器厂商都来支持progressive web app。
+
+如果
+
+#### 源码
+
+本文提到示例的完整源代码可以在[Github](https://github.com/IncredibleWeb/pwa-tutorial)上找到，也可以前往[GitHub Page](https://incredibleweb.github.io/pwa-tutorial/)查看demo效果。
