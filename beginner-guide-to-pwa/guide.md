@@ -54,7 +54,7 @@ PWA应用应该拥有和原生应用类似的界面和体验，同时基于appl
 
 能够在较差的网络连接状况或者完全离线状态下运行(这也是我们最喜欢的特性)。
 
-**多次访问(Re-engageable)**
+**重复使用性(Re-engageable)**
 
 原生应用的用户愿意频繁使用它，PWA应用通过使用消息推送等功能也可以达到相同的目的。
 
@@ -72,7 +72,7 @@ PWA应用可以安装在设备的主屏上，方便用户随时打开使用。
 
 ### 开始写代码吧！
 
-来创建我们的第一个PWA应用，Sky High，用来模拟机场的到达航班时刻表。用户首次打开应用，我们将会展示从接口获取的即将到达航班的信息。如果用户在没有网络连接的情况下重新加载了我们的web应用，我们希望能继续展示最后一次有网络连接时加载的航班到达时刻表。
+好了，来创建我们的第一个PWA应用，Sky High，用来模拟机场的到达航班时刻表。用户首次打开应用，我们将会展示从接口获取的即将到达航班的信息。如果用户在没有网络连接的情况下重新加载了我们的web应用，我们希望能继续展示最后一次有网络连接时加载的航班到达时刻表。
 
 ![](./images/1.png)
 
@@ -127,7 +127,7 @@ PWA应用的第一个特点就是必须保证它能在所有的设备和浏览�
 
 `page.js`
 
-    (var Page = (function() {
+    var Page = (function() {
 
         // declare the view model used within the page
         function ViewModel() {
@@ -406,7 +406,7 @@ Google的Chrome团队推出了一个工具来测试PWA应用。[Lighthose](https
 
 #### 浏览器支持情况
 
-PWA应用的发展才刚刚起步，浏览器的支持情况也不是很乐观，特别是在Safari和微软的Edge中。但是，微软已经公开表示开发还在进行中，将来会完全支持PWA应用。
+PWA应用的发展才刚刚起步，浏览器的支持情况也不是很乐观，特别是在Safari和微软的Edge中。但是，微软已经公开表示开发还在进行中，将来会完全支持PWA应用。[^1]
 
 
 -   `Service worker和Cache API`
@@ -426,3 +426,5 @@ Chrome，Firefox，Opera和三星自带浏览器均已支持绝大多数API。�
 #### 源码
 
 本文提到示例的完整代码可以在[Github](https://github.com/IncredibleWeb/pwa-tutorial)上找到，也可以前往[GitHub Page](https://incredibleweb.github.io/pwa-tutorial/)访问我们的应用。
+
+[^1]: 文章发布于2016年8月，浏览器目前对于PWA的支持情况有所改善，具体可以查阅相关文档
